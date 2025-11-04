@@ -26,26 +26,27 @@ public class App {
      */
     public void run() {
         // TODO 12: en un bucle muestra el menú, lee la opción y ejecuta la opción hasta que se elija salir.
-        Scanner teclado = new Scanner(System.in);
-        int numero= -1;
+//        Scanner teclado = new Scanner(System.in);
+//        int numero= -1;
 
-        while (numero != 0){
+        while (true) {
+
+            Gui.mostrarMenu();
+
+            if(Gui.leerNumero("Introduce un numero:")==0){
+                break;
+
+            }
+
+        }
 
 
-            System.out.println("*****************************************");
-            System.out.printf("* %13s %13s %13s ", "LIGAS", "PADDLE", "*\n");
-            System.out.println("*****************************************");
 
-            System.out.println("\t1. Listar equipos ligas");
-            System.out.println("\t2. Mostrar tabla resultados de una liga");
-            System.out.println("\t3. Listar campeones ligas");
-            System.out.println("\t4. Anotar marcadores partido a una liga");
-            System.out.println("\t0. Salir de la aplicación");
-            System.out.println("*****************************************");
 
-            System.out.println("Introduce la opcion que quieras hacer, por favor:");
-           String texto = teclado.nextLine();
-           numero= Integer.parseInt(texto);
+
+//            System.out.println("Introduce la opcion que quieras hacer, por favor:");
+//           String texto = teclado.nextLine();
+//           numero= Integer.parseInt(texto);
 
 //           if(numero == 1){
 //               gestorLigas.getListaLigas();
@@ -64,7 +65,7 @@ public class App {
 //           }
 
 
-        }
+
 
 
 
@@ -173,36 +174,49 @@ public class App {
         // Permite repetir el proceso hasta que el usuario decida salir.
 
         Scanner teclado = new Scanner(System.in);
-        int numero= -1;
-        while (numero != 0){
+        int opcion= -1;
+        while (opcion != 0) {
 
-            int numeroLiga = 1;
-            gestorLigas.getListaLigas();
-            gestorLigas.getListaEquipos(numeroLiga);
-            gestorLigas.getTablaResultadosLiga(numeroLiga);
-            Scanner teclado1 = new Scanner(System.in);
-            System.out.println("Selecciona un equipo:");
-            String texto = teclado.nextLine();
-            numero= Integer.parseInt(texto);
+            System.out.println("||| LIGAS DISPONIBLES |||");
+            System.out.println(gestorLigas.getListaLigas());
 
-            Scanner teclados = new Scanner(System.in);
-            System.out.println("Selecciona otro equipo:");
-            String texto2 = teclado.nextLine();
-            int numero2= Integer.parseInt(texto);
+            System.out.println("Selecciona el número de liga (0 para salir): ");
+            opcion = teclado.nextInt();
+            teclado.nextLine();
+
+            if(opcion == 0){
+                salir();
+            }
+
+            System.out.println("||| EQUIPOS DE LA LIGA " + opcion+ "|||");
+
+            System.out.println(gestorLigas.getListaEquipos(opcion));
+
+            System.out.println("||| TABLA ANTES DEL PARTIDO |||");
+            System.out.println(gestorLigas.getTablaResultadosLiga(opcion));
+
+            System.out.println("Selecciona el número del primer equipo: ");
+            int numEquipo1 = teclado.nextInt();
+
+            System.out.println("Selecciona el número del segundo equipo: ");
+            int numEquipo2 = teclado.nextInt();
+
+            System.out.println("Introduce los puntos del primer equipo");
+            int puntos1 = teclado.nextInt();
+
+            System.out.println("Introduce los puntos del suegundo equipo: ");
+            int puntos2 = teclado.nextInt();
 
 
-            gestorLigas.setMarcadorPartido(numeroLiga,numero,numero2,3,5,1);
-            gestorLigas.getTablaResultadosLiga(numeroLiga);
+            gestorLigas.setMarcadorPartido(opcion,numEquipo1,numEquipo2,1,puntos1,puntos2);
+
+            System.out.println("||| TABLA DESPUÉS DEL PARTIDO |||");
+            System.out.println(gestorLigas.getTablaResultadosLiga(opcion));
+
+            System.out.println("¿Deseas registrar otro partido? 1 = si, 0 = salir");
+            opcion = teclado.nextInt();
+
         }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -225,5 +239,8 @@ public class App {
         Gui.mostrarTexto("Opción no válida");
     }
 
-
+    public static void main(String[] args) {
+        App a = new App();
+        a.anotarMarcadoresLiga();
+    }
 }

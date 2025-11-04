@@ -24,12 +24,7 @@ public class GestorLigas {
     public void crearLiga(int numLiga, String nombreLiga, String equipo1, String equipo2, String equipo3, String equipo4) {
         // TODO 21: instancia una nueva liga y asígnala al atributo correspondiente.
 
-
-
-
-
-
-
+    Liga nuevaLiga = new Liga(nombreLiga,equipo1,equipo2,equipo3,equipo4);
 
 
 
@@ -51,16 +46,26 @@ public class GestorLigas {
         // TODO 22: devuelve la liga correspondiente al número proporcionado.
 
 
+        switch (numLiga){
+
+            case 1:
+                return liga1;
+
+            case 2:
+                return liga2;
+
+            case 3:
+                return liga3;
+
+            case 4:
+                return liga4;
+
+            default:
+                return  null;
+        }
 
 
 
-
-
-
-
-
-
-        return null;
     }
 
     /**
@@ -70,7 +75,28 @@ public class GestorLigas {
      */
     public String getNombreLiga(int numLiga) {
         // TODO 23: devuelve el nombre de la liga correspondiente al número proporcionado.
-        return "";
+
+        switch (numLiga){
+
+            case 1:
+                return liga1 != null ? liga1.getNombreLiga() : "";
+
+            case 2:
+                return liga2 != null ? liga2.getNombreLiga() : "";
+
+            case 3:
+                return liga3 != null ? liga3.getNombreLiga() : "";
+
+            case 4:
+                return liga4 != null ? liga4.getNombreLiga() : "";
+
+            default:
+                return "";
+        }
+
+
+
+
     }
 
     /**
@@ -82,7 +108,33 @@ public class GestorLigas {
     public String getEquipo(int numLiga, int numEquipo) {
         // TODO 24: devuelve el nombre del equipo correspondiente al número de liga y número de equipo proporcionados.
 
-        return "";
+        Liga ligaseleccionada = null;
+
+        switch (numLiga){
+
+            case 1:
+                ligaseleccionada = liga1;
+                break;
+            case 2:
+                ligaseleccionada = liga2;
+                break;
+            case 3:
+                ligaseleccionada = liga3;
+                break;
+            case 4:
+                ligaseleccionada = liga4;
+                break;
+            default:
+                return "";
+        }
+
+        if(ligaseleccionada == null){
+
+            return "";
+        }
+
+        return ligaseleccionada.getEquipo(numEquipo);
+
     }
 
     /**
@@ -97,6 +149,35 @@ public class GestorLigas {
     public void setMarcadorPartido(int numLiga, int numEquipo1, int numEquipo2, int numMarcador, int v1, int v2) {
         // TODO 25: establece el marcador de un partido entre dos equipos en una liga específica.
 
+        Liga ligaseleccionada = null;
+
+        switch (numLiga){
+
+            case 1:
+                ligaseleccionada = liga1;
+                break;
+            case 2:
+                ligaseleccionada = liga2;
+                break;
+            case 3:
+                ligaseleccionada = liga3;
+                break;
+            case 4:
+                ligaseleccionada = liga4;
+                break;
+            default:
+                System.out.println("Número de liga invalido.");
+                return;
+        }
+
+        if(ligaseleccionada != null){
+
+            ligaseleccionada.setMarcadorPartido(numEquipo1,numEquipo2,numMarcador,v1,v2);
+        }
+        else {
+            System.out.println("La liga seleccionada no existe aún.");
+        }
+
     }
 
     /**
@@ -106,11 +187,26 @@ public class GestorLigas {
     public String getListaLigas() {
         // TODO 26: devuelve una lista formateada de las ligas disponibles.
         // Ej. 1. A       2. B       3. C       4. D
-        String s = "";
 
 
 
-        return s;
+        String lista = "";
+
+        for (int i = 1; i <= 4; i++) {
+            String nombre = getNombreLiga(i);
+
+            if (nombre == null || nombre.isEmpty()){
+
+                nombre = "(Vacía)";
+
+            }
+            lista += i+ "." + nombre + "\t";
+
+        }
+        return lista.trim();
+
+
+
     }
 
     /**
@@ -123,7 +219,10 @@ public class GestorLigas {
         // EJ. 1. A1      2. A2      3. A3      4. A4
         String s = "";
 
-
+        s = s + liga1.getEquipo(numLiga);
+        s = s + liga2.getEquipo(numLiga);
+        s = s + liga3.getEquipo(numLiga);
+        s = s + liga4.getEquipo(numLiga);
 
         return s;
     }
@@ -141,6 +240,12 @@ public class GestorLigas {
         //        4. D        D1
         //
         String txt = "";
+
+            txt = txt + liga1.getEquipoCampeon();
+            txt = txt + liga2.getEquipoCampeon();
+            txt = txt + liga3.getEquipoCampeon();
+            txt = txt + liga4.getEquipoCampeon();
+
 
 
 
@@ -176,6 +281,11 @@ public class GestorLigas {
         //
 
 
+        String X = "-------------------------";
+        X += "-------------------------";
+        X += "-------------------------";
+        X += "-------------------------";
+        X += "-------------------------";
 
 
 
@@ -188,5 +298,11 @@ public class GestorLigas {
 
         return "X";
     }
+
+    public static void main(String[] args) {
+        GestorLigas g = new GestorLigas();
+        g.getListaLigas();
+    }
+
 
 }
