@@ -26,6 +26,25 @@ public class GestorLigas {
 
     Liga nuevaLiga = new Liga(nombreLiga,equipo1,equipo2,equipo3,equipo4);
 
+    switch (numLiga){
+
+        case 1:
+            liga1 = new Liga(nombreLiga,equipo1,equipo2,equipo3,equipo4);
+            break;
+
+        case 2:
+            liga2 = new Liga(nombreLiga,equipo1,equipo2,equipo3,equipo4);
+            break;
+
+        case 3:
+            liga3 = new Liga(nombreLiga,equipo1,equipo2,equipo3,equipo4);
+            break;
+
+        case 4:
+            liga4 = new Liga(nombreLiga,equipo1,equipo2,equipo3,equipo4);
+
+            break;
+    }
 
 
 
@@ -195,15 +214,15 @@ public class GestorLigas {
         for (int i = 1; i <= 4; i++) {
             String nombre = getNombreLiga(i);
 
-            if (nombre == null || nombre.isEmpty()){
+            if (nombre == null ){
 
-                nombre = "(Vacía)";
+                nombre = "Vacío";
 
             }
             lista += i+ "." + nombre + "\t";
 
         }
-        return lista.trim();
+        return lista;
 
 
 
@@ -219,6 +238,18 @@ public class GestorLigas {
         // EJ. 1. A1      2. A2      3. A3      4. A4
         String s = "";
 
+        for (int i = 1; i <= 4; i++){
+
+            String nombre = getNombreLiga(i);
+
+            if (nombre == null ){
+
+                nombre = "Vacío";
+
+            }
+//            s += i+ "." + nombre + getEquipo(numLiga) +"\t";
+
+        }
         s = s + liga1.getEquipo(numLiga);
         s = s + liga2.getEquipo(numLiga);
         s = s + liga3.getEquipo(numLiga);
@@ -282,10 +313,6 @@ public class GestorLigas {
 
 
         String X = "-------------------------";
-        X += "-------------------------";
-        X += "-------------------------";
-        X += "-------------------------";
-        X += "-------------------------";
 
 
 

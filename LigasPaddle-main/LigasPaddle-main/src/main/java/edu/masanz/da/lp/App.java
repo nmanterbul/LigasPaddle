@@ -84,19 +84,19 @@ public class App {
         switch (numOpc){
 
             case 1:
-                gestorLigas.getListaLigas();
+                listarEquiposLigas();
                 break;
             case 2:
-                gestorLigas.getTablaResultadosLiga(1);
+                mostrarTablaResultadosLiga();
                 break;
             case 3:
-                gestorLigas.getListadoCampeonesLigas();
+                listarCampeonesLigas();
                 break;
             case 4:
-                gestorLigas.setMarcadorPartido(1,2,3,5,1,3);
+                anotarMarcadoresLiga();
                 break;
             case 0:
-                System.out.println("Saliendo de la aplicación...");
+                salir();
         }
 
 

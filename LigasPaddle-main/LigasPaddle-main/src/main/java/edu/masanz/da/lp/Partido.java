@@ -18,9 +18,14 @@ public class Partido {
     /**
      * Constructor vacío. Inicializa el nombre de los equipos como "E1" y "E2" e instancia los tres marcadores.
      */
-    public Partido() {
+    public Partido(String E1, String E2, Marcador marcador1, Marcador marcador2, Marcador marcador3) {
         // TODO 51: Instancia todos los atributos. Da a equipo1 el valor "E1" y a equipo2 el valor "E2".
 
+    this.equipo1 = E1;
+    this.equipo2 = E2;
+    this.marcador1 = marcador1;
+    this.marcador2 = marcador2;
+    this.marcador3 = marcador3;
 
 
 
@@ -35,6 +40,8 @@ public class Partido {
     public Partido(String equipo1, String equipo2) {
         // TODO 52: Instancia todos los atributos adecuadamente.
 
+        this.equipo1 = equipo1;
+        this.equipo2 = equipo2;
 
 
 
@@ -65,11 +72,21 @@ public class Partido {
     public Marcador getMarcador(int i) {
         // TODO 54: Devuelve el marcador i-ésimo o null (utiliza switch)
 
+        switch (i){
+
+            case 1:
+                return  marcador1;
+            case 2:
+                return marcador2;
+            case 3:
+                return marcador3;
+            default:
+                return null;
+        }
 
 
 
 
-        return null;
     }
 
     /**

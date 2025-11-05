@@ -36,7 +36,7 @@ public class PartidosLiga {
         // TODO 41: Instancia todos los atributos de la clase creando los partidos entre los equipos correspondientes.
 
 
-
+        PartidosLiga partidosLiga = new PartidosLiga(equipo1, equipo2, equipo3,equipo4);
 
 
 
