@@ -24,27 +24,23 @@ public class GestorLigas {
     public void crearLiga(int numLiga, String nombreLiga, String equipo1, String equipo2, String equipo3, String equipo4) {
         // TODO 21: instancia una nueva liga y asígnala al atributo correspondiente.
 
-    Liga nuevaLiga = new Liga(nombreLiga,equipo1,equipo2,equipo3,equipo4);
-
     switch (numLiga){
 
         case 1:
             liga1 = new Liga(nombreLiga,equipo1,equipo2,equipo3,equipo4);
             break;
-
         case 2:
             liga2 = new Liga(nombreLiga,equipo1,equipo2,equipo3,equipo4);
-            break;
 
+            break;
         case 3:
             liga3 = new Liga(nombreLiga,equipo1,equipo2,equipo3,equipo4);
             break;
-
         case 4:
             liga4 = new Liga(nombreLiga,equipo1,equipo2,equipo3,equipo4);
-
             break;
     }
+
 
 
 
@@ -312,7 +308,98 @@ public class GestorLigas {
         //
 
 
-        String X = "-------------------------";
+
+
+        switch (numLiga){
+
+            case 1:
+                String X="-------------------------";
+                X = X +  "| XXX |     |     | 3-6 |";
+                X = X +  "| XXX |     |     | 5-7 |";
+                X = X+   "| XXX |     |     |     |";
+                X +=     "-------------------------";
+                X +=     "| 6-4 | XXX |     |     |";
+                X +=     "| 6-2 | XXX |     |     |";
+                X +=     "|     | XXX |     |     |";
+                X +=     "-------------------------";
+                X +=     "|     |     | XXX | 5-7 |";
+                X +=     "|     |     | XXX | 6-3 |";
+                X +=     "|     |     | XXX | 0-6 |";
+                X+=      "-------------------------";
+                X+=      "| 6-0 | 1-6 |    | XXX  |";
+                X +=     "| 6-2 | 2-6 |    | XXX  |";
+                X +=     "|     |     |    | XXX  |";
+                X +=     "-------------------------";
+
+                break;
+
+            case 2:
+                 X = "-------------------------";
+                X += "| 3-6 |     | XXX  |    |";
+                X += "| 5-7 |     | XXX  |    |";
+                X += "|     |     | XXX  |    |";
+                X += "-------------------------";
+                X += "| XXX |     |     | 6-4 |";
+                X += "| XXX |     |     | 6-2 |";
+                X += "| XXX |     |     |     |";
+                X += "-------------------------";
+                X += "| 6-3 |     |     | XXX |";
+                X += "| 0-6 | 2-6 |     | XXX |";
+                X += "| 5-7 | 6-2 |     | XXX |";
+                X+=  "-------------------------";
+                X+=  "| 6-0 | XXX |      |     |";
+                X += "| 6-2 | XXX |      |     |";
+                X += "|     | XXX |      |     |";
+                X += "-------------------------";
+
+                break;
+
+            case 3:
+                X =  "-------------------------";
+                X += "| 3-6 |     | XXX |    |";
+                X += "| 5-7 | 6-4 | XXX |    |";
+                X += "|     | 5-7 | XXX |    |";
+                X += "-------------------------";
+                X += "| 5-7 | XXX |     |    |";
+                X += "| 3-6 | XXX | 5-7 |    |";
+                X += "| 6-2 | XXX | 3-6 |    |";
+                X += "-------------------------";
+                X += "| 6-3 |     |     | XXX |";
+                X += "| 0-6 | 2-6 |     | XXX |";
+                X += "| 5-7 | 6-2 |     | XXX |";
+                X+=  "-------------------------";
+                X+=  "| XXX | 0-6 |     |     |";
+                X += "| XXX | 5-7 |     |     |";
+                X += "| XXX |     |     |     |";
+                X += "-------------------------";
+
+                break;
+
+            case 4:
+                X =  "-------------------------";
+                X += "| XXX | 5-7 | XXX |    |";
+                X += "| XXX | 6-4 | XXX |    |";
+                X += "| XXX | 5-7 | XXX |    |";
+                X += "-------------------------";
+                X += "| 5-7 | XXX |     |     |";
+                X += "| 3-6 | XXX | 5-7 |     |";
+                X += "| 6-2 | XXX | 3-6 |     |";
+                X += "-------------------------";
+                X += "|     | XXX | 0-6 | XXX |";
+                X += "|     | XXX | 2-6 |     |";
+                X += "|     | XXX |     |     |";
+                X+=  "-------------------------";
+                X+=  "|     | 0-6 | XXX | 6-4 |";
+                X += "|     | 5-7 | XXX | 2-6 |";
+                X += "|     |     | XXX | 5-7 |";
+                X += "-------------------------";
+
+                break;
+
+
+
+
+        }
 
 
 
@@ -328,7 +415,7 @@ public class GestorLigas {
 
     public static void main(String[] args) {
         GestorLigas g = new GestorLigas();
-        g.getListaLigas();
+        g.getTablaResultadosLiga(2);
     }
 
 

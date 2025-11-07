@@ -27,7 +27,7 @@ public class Liga {
 
 
         this.nombreLiga = nombreLiga;
-        this.equipo1 = equipo1;
+        this. equipo1 = equipo1;
         this.equipo2 = equipo2;
         this.equipo3 = equipo3;
         this.equipo4 = equipo4;

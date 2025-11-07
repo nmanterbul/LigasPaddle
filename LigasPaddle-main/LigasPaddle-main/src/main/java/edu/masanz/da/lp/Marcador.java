@@ -28,7 +28,6 @@ public class Marcador {
      */
     public Marcador(int v1, int v2) {
         // TODO 62: inicializa los atributos con los parámetros proporcionados.
-
         this.v1 = v1;
         this.v2 = v2;
 
@@ -52,7 +51,6 @@ public class Marcador {
     public void setV1(int v1) {
         // TODO 64: establece el valor del primer equipo.
         this.v1 = v1;
-
     }
 
     /**
@@ -70,7 +68,7 @@ public class Marcador {
      */
     public void setV2(int v2) {
         // TODO 66: establece el valor del segundo equipo.
-
+        this.v2 = v2;
     }
 
     // endregion
@@ -83,8 +81,9 @@ public class Marcador {
     public void setV1V2(int v1, int v2) {
         // TODO 67: establece ambos valores del marcador.
 
-        this.v1 = v1;
+        this.v1= v1;
         this.v2 = v2;
+
 
     }
 
@@ -95,18 +94,16 @@ public class Marcador {
     public int getGanador() {
         // TODO 68: devuelve el número del equipo ganador.
 
-        if(this.v1 > this.v2){
-            return (1);
+        if (this.v1 > this.v2){
 
-        }else if (this.v2 > this.v1){
+            return  (1);
+
+        }else  if(this.v2 > this.v1){
             return (2);
 
-        }else{
+        }else {
             return (0);
         }
-
-
-
 
 
     }

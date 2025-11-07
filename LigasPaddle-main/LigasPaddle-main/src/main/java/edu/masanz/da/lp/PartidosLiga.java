@@ -35,8 +35,8 @@ public class PartidosLiga {
     public PartidosLiga(String equipo1, String equipo2, String equipo3, String equipo4) {
         // TODO 41: Instancia todos los atributos de la clase creando los partidos entre los equipos correspondientes.
 
+        PartidosLiga partidosLiga = new PartidosLiga(equipo1, equipo2,equipo3,equipo4);
 
-        PartidosLiga partidosLiga = new PartidosLiga(equipo1, equipo2, equipo3,equipo4);
 
 
 
