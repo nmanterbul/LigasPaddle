@@ -115,7 +115,13 @@ public class Marcador {
     @Override
     public String toString() {
         // TODO 69: devuelve una representación textual del marcador.
-        return "0-0";
+
+        String s = getV1() +"-"+getV2();
+
+        return s;
+
+
+
     }
 
 }

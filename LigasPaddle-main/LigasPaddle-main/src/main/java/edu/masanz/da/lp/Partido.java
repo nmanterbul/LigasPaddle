@@ -18,11 +18,11 @@ public class Partido {
     /**
      * Constructor vacío. Inicializa el nombre de los equipos como "E1" y "E2" e instancia los tres marcadores.
      */
-    public Partido(String Equipo1, String Equipo2, Marcador marcador1, Marcador marcador2,Marcador marcador3,Marcador marcador4) {
+    public Partido(String E1, String E2, Marcador marcador1, Marcador marcador2,Marcador marcador3) {
         // TODO 51: Instancia todos los atributos. Da a equipo1 el valor "E1" y a equipo2 el valor "E2".
 
-        this.equipo1 = Equipo1;
-        this.equipo2 = Equipo2;
+        this.equipo1 = E1;
+        this.equipo2 = E2;
         this.marcador1 = marcador1;
         this.marcador2 = marcador2;
         this.marcador3 = marcador3;

@@ -234,22 +234,42 @@ public class GestorLigas {
         // EJ. 1. A1      2. A2      3. A3      4. A4
         String s = "";
 
+        Liga ligaSeleccionada = null;
+
+        switch (numLiga){
+
+            case 1:
+                ligaSeleccionada = liga1;
+                break;
+
+            case 2:
+                ligaSeleccionada = liga2;
+                break;
+
+            case 3:
+                ligaSeleccionada = liga3;
+                break;
+
+            case 4:
+                ligaSeleccionada = liga4;
+                break;
+
+            default:
+                System.out.println("NUmero de liga inválido");
+        }
+
         for (int i = 1; i <= 4; i++){
 
-            String nombre = getNombreLiga(i);
+            String nombreEquipo = ligaSeleccionada.getEquipo(i);
 
-            if (nombre == null ){
+            if (nombreEquipo == null ){
 
-                nombre = "Vacío";
+                nombreEquipo = "Vacío";
 
             }
-//            s += i+ "." + nombre + getEquipo(numLiga) +"\t";
+           s += i+ "." + nombreEquipo +"\t";
 
         }
-        s = s + liga1.getEquipo(numLiga);
-        s = s + liga2.getEquipo(numLiga);
-        s = s + liga3.getEquipo(numLiga);
-        s = s + liga4.getEquipo(numLiga);
 
         return s;
     }
@@ -268,13 +288,26 @@ public class GestorLigas {
         //
         String txt = "";
 
-            txt = txt + liga1.getEquipoCampeon();
-            txt = txt + liga2.getEquipoCampeon();
-            txt = txt + liga3.getEquipoCampeon();
-            txt = txt + liga4.getEquipoCampeon();
+        Liga[] ligas = {liga1, liga2, liga3,liga4};
 
 
+        for (int i = 0; i < ligas.length; i++) {
 
+            String nombreLiga = ligas[i].getNombreLiga();
+            if(nombreLiga == null){
+
+                nombreLiga = "Vacio";
+
+            }
+
+            String campeon = ligas[i].getEquipoCampeon();
+
+            if(campeon == null){
+
+                campeon = "vacio";
+            }
+
+        }
 
 
         return txt;
@@ -403,19 +436,12 @@ public class GestorLigas {
 
 
 
-
-
-
-
-
-
-
         return "X";
     }
 
     public static void main(String[] args) {
         GestorLigas g = new GestorLigas();
-        g.getTablaResultadosLiga(2);
+        g.getListadoCampeonesLigas();
     }
 
 

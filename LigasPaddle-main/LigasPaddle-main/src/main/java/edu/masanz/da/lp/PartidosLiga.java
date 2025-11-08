@@ -60,22 +60,37 @@ public class PartidosLiga {
     public Partido getPartido(int i, int j) {
         // TODO 42: Devuelve la referencia al partido entre los equipos i y j o null si no hay correspondencia
 
+            if(i== 1 && j == 2 ){
+
+                return partido12;
+            } else if (i == 2 && j ==1) {
+                return partido21;
+            }else if (i== 1 && j == 3 ){
+                return partido13;
+            } else if (i == 3 && j == 1 ) {
+                return partido23;
+            }else if(i == 1 && j == 4 ){
+                return partido14;
+            } else if (i == 4 && j == 1) {
+                return partido24;
+
+            }else if(i == 2 && j == 3  ){
+                return partido31;
+            }else if (i == 3 && j == 2){
+                return partido41;
+            }else if(i== 2 && j == 4 ){
+                return partido23;
+            } else if (i== 4 && j == 2) {
+                return partido32;
+            }else if(i==3 && j ==4 ){
+                return partido24;
+            } else if (i == 4 && j == 3) {
+                return partido34;
+            }else{
+                return null;
+            }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        return null;
     }
 
     /**

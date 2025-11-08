@@ -53,17 +53,28 @@ public class Liga {
     public String getEquipo(int i) {
         // TODO 33: Devuelve el nombre del equipo correspondiente o sino cadena vacía
 
+        switch (i){
+
+            case 1:
+                return equipo1;
+
+            case 2:
+                return equipo2;
+
+            case 3:
+                return equipo3;
+
+            case 4:
+                return equipo4;
+
+            default:
+                return "";
+
+
+        }
 
 
 
-
-
-
-
-
-
-
-        return "";
     }
 
     /**
@@ -75,7 +86,17 @@ public class Liga {
      */
     public String getMarcadorPartido(int k, int i, int j) {
         // TODO 34: Devuelve el marcador k del partido entre el equipo i y j
+
+        String s = "";
+
+        if(k==1){
+            s += "0-0";
+
+        }
+
         return "0-0";
+
+
     }
 
     /**

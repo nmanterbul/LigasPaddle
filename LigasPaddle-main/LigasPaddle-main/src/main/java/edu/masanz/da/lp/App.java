@@ -33,10 +33,21 @@ public class App {
 
             Gui.mostrarMenu();
 
-            if(Gui.leerNumero("Introduce un numero:")==0){
-                break;
+            Scanner teclado = new Scanner(System.in);
+            String texto = teclado.nextLine();
 
+            int numero = Integer.parseInt(texto);
+
+            if(numero==1 || numero==2 || numero==3 ||numero==4){
+
+                ejecutarOpcion(numero);
+            }else if (numero==0){
+                salir();
+                break;
+            }else {
+                opcionNoValida();
             }
+
 
         }
 
